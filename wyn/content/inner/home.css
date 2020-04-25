@@ -26,6 +26,10 @@ a:visited{
 	margin: 0 auto;
 	overflow-y: hidden;
 }
+.item>img{
+	width: 1800px;
+	height: 714px;
+}
 .content{
 	width: 1200px;
 	margin: 0 auto;
