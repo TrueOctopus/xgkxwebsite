@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>home</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<script type="text/javascript" src="home.js"></script>
+</head>
+<body>
+	<!--导航栏-->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container center-block">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-left: 10px;">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a href="#"><img src="pic/logowhite2.png" /></a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">主页<span class="sr-only">(current)</span></a></li>
+	        <li><a href="#">公告</a></li>
+	        <li><a href="#">活动</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">论坛</a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">web前端</a></li>
+	            <li><a href="#">C语言</a></li>
+	            <li><a href="#">Java</a></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        <li><a href="#">加入我们</a></li>
+	        </li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#">联系我们</a></li>
+	        <li><a href="#">登录</a></li>
+	        <button type="button" class="btn btn-lg btn-default navbar-btn">注 册</button>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container -->
+	</nav>
+	<div class="part1"><!-- 页面头部 -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 p1_l">
+					<div class="p1_text1">The best CI/CD to <span>test</span></div>
+					<div class="p1_text2">Automate your development process quickly, safely, and at scale.</div>
+					<button class="btn btn-default btn-lg p1_bt1" type="submit">Start Building for Free</button>
+					<button class="btn btn-default btn-lg p1_bt2" type="submit">Explore the Docs</button>
+				</div>
+				<div class="col-md-6">
+					<img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/illu_homepage_studioiv-042b87b2f41fe6d0c5943b12f6cd1ff2a227dc84e3a7e76f2b8d57c05f1b1da4.png">
+				</div>
+			</div>
+		</div>
+	</div><!-- /页面头部 -->
+	<div class="part2"><!-- 内容 -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 p2_l">
+					<img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/switch-from-jenkins-6970e1be53e7adf682ecf62483f9c5544d8d2d53af98136f3f96375cba2ae610.png">
+				</div>
+				<div class="col-md-6">
+					<div class="p2_1_text1">CI that’s built for the cloud.Make the switch from Jenkins.</div>
+					<div class="p2_1_text2">With CircleCI, teams get faster builds, shorter feedback cycles, and simplified pipeline maintenance.</div>
+					<button class="btn btn-default btn-lg p2_bt1" type="submit">Learn More</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="p2_2_text1">Start up innovation, enterprise scale</div>
+					<div class="p2_2_text2">Whether you need the simplicity of a cloud-hosted solution or the control of hosting on your own private infrastructure, we have options.</div>
+					<button class="btn btn-default btn-lg p2_bt2" type="submit">Learn More</button>
+					<div class="row" style="margin-top: 80px;">
+						<div class="col-md-6 text-center">
+							<img src="https://d3r49iyjzglexf.cloudfront.net/icons/product/ic-cloud-b9bb431c72804b1846f48a24682d91a7cb1a5949eacae9201227196a56faf454.svg">
+							<div class="p2_2_text3">Cloud</div>
+							<div class="p2_2_text4">We oversee the setup, security, and maintenance of your continuous integration instance(s).</div>
+						</div>
+						<div class="col-md-6 text-center">
+							<img src="https://d3r49iyjzglexf.cloudfront.net/icons/product/ic-server-e0cce0bab43bd5f24b8f4276376301a8142a5239d53b3d7f7dc4f86c22d10b79.svg">
+							<div class="p2_2_text3">Sever</div>
+							<div class="p2_2_text4">Install CircleCI on a private server that your team sets up and maintains for security.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="background-color: #F3F3F3;"><!-- 轮播图 -->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner text-center" role="listbox">
+			    <div class="item active">
+			      <div class="carousel_block">
+			      	<img src="pic/图标.png" alt="..." class="img-circle">
+			      </div>
+			    </div>
+			    <div class="item">
+			      <div class="carousel_block">
+			      	
+			      </div>
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div><!-- /轮播图 -->
+	</div><!-- /内容 -->
+</body>
+</html>

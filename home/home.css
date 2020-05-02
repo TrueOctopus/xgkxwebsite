@@ -1,0 +1,251 @@
+/*导航栏整体*/
+.navbar{
+	transition: top 0.3s,opacity 0.3s;
+	min-height: 70px;
+	border-color: transparent;
+}
+.navbar>div{
+	max-width: 1170px;
+}
+.navbar>div>div{
+	margin-top: 10px;
+}
+.navbar-inverse{
+	background-color: #161616;
+}
+/*导航栏左端图片*/
+.navbar-header img{
+	max-height: 55px;
+	margin-right: 20px;
+}
+/*导航栏未选中标签*/
+.navbar-inverse .navbar-nav>li>a{
+	color: #FFFFFF;
+	height: 60px;
+	padding: 15px 20px;
+}
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.open>a:hover{
+	transition: color 0.2s;
+	background-color: #161616;
+	color: #2ABD4A;
+}
+/*导航栏选中标签*/
+.navbar-inverse .navbar-nav>.active>a{
+	background-color: #161616;
+	color: #FFFFFF;
+	transition: color 0.2s;
+}
+.navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: #161616;
+	color: #2ABD4A;
+}
+/*导航栏下拉框*/
+.dropdown-menu>li>a{
+	padding: 8px 20px;
+}
+.dropdown-menu>li>a:hover{
+	color: #2ABD4A;
+	background-color: inherit;
+}
+/*导航栏按钮*/
+.navbar-right>button{
+	margin-top: 3px;
+	margin-left: 15px;
+	color: #FFFFFF;
+	font-weight: 600;
+	background-color: #04AA51;
+	border-color: #04AA51;
+	transition: background-color 0.2s;
+}
+.navbar-right>button:hover{
+	color: #FFFFFF;
+	background-color: #049B4A;
+	border-color: #049B4A;
+}
+.navbar-right>button:focus{
+	color: #FFFFFF !important;
+	background-color: #048C43 !important;
+	border-color: #048C43 !important;
+}
+/*导航栏隐藏*/
+.navhidden{
+	top: -70px;
+	opacity: 0;
+}
+/*==导航栏==*/
+
+
+
+*{
+	font-family: microsoft yahei;
+}
+.part1{
+	padding: 120px 0;
+	color: #FFFFFF;
+	background-color: #161616;
+}
+.part1>div>div{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.p1_l{
+	padding-top: 100px;
+}
+.p1_text1{
+	margin: 30px 0;
+	font-weight: 300;
+	font-size: 52px;
+}
+.p1_text1>span{
+	font-weight: 600;
+}
+.p1_text2{
+	max-width: 490px;
+	margin: 30px 0;
+	font-size: 20px;
+}
+.part1>div>div>div>img{
+	width: 100%;
+}
+.part1>div>div>div>button{
+	margin: 9px 6px;
+}
+.p1_bt1{
+	color: #FFFFFF;
+	font-weight: 600;
+	background-color: #04AA51;
+	border-color: #04AA51;
+	transition: background-color 0.2s;
+}
+.p1_bt1:hover{
+	color: #FFFFFF;
+	background-color: #049B4A;
+	border-color: #049B4A;
+}
+.p1_bt1:focus{
+	color: #FFFFFF !important;
+	background-color: #048C43 !important;
+	border-color: #048C43 !important;
+}
+.p1_bt2{
+	color: #D8D8D8;
+	font-weight: 600;
+	background-color: transparent;
+	border-color: #BFBFBF;
+	transition: background-color 0.2s;
+}
+.part2>div>div{
+	max-width: 1170px;
+	padding: 100px 0;
+	border-bottom: 1px solid #F3F3F3;
+}
+.p2_l>img{
+	width: 100%;
+	padding: 20px 50px;
+}
+.p2_1_text1,.p2_2_text1{
+	margin-top: 5px;
+	margin-bottom: 25px;
+	color: #343434;
+	line-height: 1.5;
+	font-weight: 500;
+	font-size: 32px;
+}
+.p2_1_text2,.p2_2_text2{
+	max-width: 555px;
+	margin: 18px 0;
+	font-size: 20px;
+	color: #555555;
+}
+.p2_bt1,.p2_bt2{
+	width: 250px;
+	height: 50px;
+	margin-top: 40px;
+	font-weight: 600;
+	color: #04AA51;
+	border: 1px solid #04AA51;
+	border-radius: 4px;
+	transition: box-shadow 0.2s;
+}
+.p2_bt1:hover,.p2_bt2:hover{
+	color: #04AA51;
+	border: 1px solid #04AA51;
+	background-color: #FFFFFF;
+	box-shadow: inset 0 0 0 1px #04AA51;
+}
+.p2_bt1:focus,.p2_bt2:focus{
+	color: #04AA51 !important;
+	border: 1px solid #04AA51 !important;/*这句不知为何没用*/
+	background-color: #FFFFFF !important;
+	box-shadow: inset 0 0 0 1px #04AA51 !important;
+}
+.p2_2_text2{
+	max-width: 850px;
+	margin: 0 auto;
+}
+.p2_2_text3{
+	font-size: 23px;
+	font-weight: 500;
+	color: #343434;
+	margin: 35px 0;
+}
+.p2_2_text4{
+	font-size: 16px;
+	font-weight: 500;
+	color: #555555;
+	margin: 35px 50px;
+}
+.carousel{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 !important;
+}
+.carousel_block{
+	width: 100%;
+	height: 490px;
+	padding: 50px 0;
+}
+.carousel_block>img{
+	width: 108px;
+	height: 108px;
+}
+
+@media screen and (max-width: 1200px){
+	.p1_l{
+		padding-top: 0px;
+	}
+	.p1_ltext2{
+		max-width: 750px;
+	}
+}
+@media screen and (max-width: 991px){
+	.navhidden{
+		display: none;
+	}
+	.part1{
+		padding: 70px 0;
+	}
+	.p1_l{
+		text-align: center;
+	}
+	.p1_text1{
+		font-size: 30px;
+	}
+	.p1_text2{
+		margin: 30px auto;
+	}
+	.part2>div>div{
+		text-align: center;
+		padding: 50px 0;
+	}
+	.p2_1_text1{
+		margin: 20px 20px;
+	}
+	.p2_1_text2{
+		max-width: 990px;
+		margin: 10px 5px;
+	}
+	.p2_bt1{
+		margin: 30px auto;
+	}
+}
