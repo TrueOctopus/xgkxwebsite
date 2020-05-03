@@ -72,4 +72,22 @@
 	top: -70px;
 	opacity: 0;
 }
+
+@media screen and (max-width: 991px){
+	.navhidden{
+		display: none;
+	}
+	.navbar{
+		min-height: 50px;
+	}
+	.navbar-header img{
+		max-height: 45px;
+		margin-right: 20px;
+	}
+	.navbar-inverse .navbar-nav>li>a{
+		color: #FFFFFF;
+		height: 50px;
+		padding: 15px 15px;
+	}
+}
 /*==导航栏==*/
