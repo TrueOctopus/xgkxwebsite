@@ -202,12 +202,46 @@
 }
 .carousel_block{
 	width: 100%;
-	height: 490px;
+	min-height: 490px;
 	padding: 50px 0;
 }
 .carousel_block>img{
 	width: 108px;
 	height: 108px;
+}
+.carousel_text{
+	max-width: 920px;
+	line-height: 1.5;
+	font-size: 23px;
+	color: #343434;
+	margin-top: 30px;
+	padding: 10px 20px;
+}
+.carousel_text~.carousel_text{
+	max-width: 920px;
+	line-height: 1.5;
+	font-size: 20px;
+	color: #555555;
+	margin-top: 30px;
+	padding: 10px 20px;
+}
+.carousel-indicators>li{
+	width: 15px;
+	height: 15px;
+	margin: 0 8px;
+	border-color: #B7B7B7;
+	background-color: #B7B7B7;
+}
+.carousel-indicators>.active{
+	width: 15px;
+	height: 15px;
+	margin: 0 8px;
+	border-color: #04AA51;
+	background-color: #04AA51;
+}
+.carousel-indicators>li:hover{
+	border-color: #000;
+	background-color: #000;
 }
 
 @media screen and (max-width: 1200px){
