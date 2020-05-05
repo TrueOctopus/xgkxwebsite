@@ -61,7 +61,7 @@ $(document).ready(function(){
 		n++;
 		nn++;
 	}
-	setInterval(changespan,2000)//这里调整切换时隔
+	setInterval(changespan,4000)//这里调整切换时隔
 
 
 	//轮播图高度统一
