@@ -1,0 +1,75 @@
+/*导航栏整体*/
+.navbar{
+	transition: top 0.3s,opacity 0.3s;
+	min-height: 70px;
+	border-color: transparent;
+}
+.navbar>div{
+	max-width: 1170px;
+}
+.navbar>div>div{
+	margin-top: 10px;
+}
+.navbar-inverse{
+	background-color: #161616;
+}
+/*导航栏左端图片*/
+.navbar-header img{
+	max-height: 55px;
+	margin-right: 20px;
+}
+/*导航栏未选中标签*/
+.navbar-inverse .navbar-nav>li>a{
+	color: #FFFFFF;
+	height: 60px;
+	padding: 15px 20px;
+}
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.open>a:hover{
+	transition: color 0.2s;
+	background-color: #161616;
+	color: #2ABD4A;
+}
+/*导航栏选中标签*/
+.navbar-inverse .navbar-nav>.active>a{
+	background-color: #161616;
+	color: #FFFFFF;
+	transition: color 0.2s;
+}
+.navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: #161616;
+	color: #2ABD4A;
+}
+/*导航栏下拉框*/
+.dropdown-menu>li>a{
+	padding: 8px 20px;
+}
+.dropdown-menu>li>a:hover{
+	color: #2ABD4A;
+	background-color: inherit;
+}
+/*导航栏按钮*/
+.navbar-right>button{
+	margin-top: 3px;
+	margin-left: 15px;
+	color: #FFFFFF;
+	font-weight: 600;
+	background-color: #04AA51;
+	border-color: #04AA51;
+	transition: background-color 0.2s;
+}
+.navbar-right>button:hover{
+	color: #FFFFFF;
+	background-color: #049B4A;
+	border-color: #049B4A;
+}
+.navbar-right>button:focus{
+	color: #FFFFFF !important;
+	background-color: #048C43 !important;
+	border-color: #048C43 !important;
+}
+/*导航栏隐藏*/
+.navhidden{
+	top: -70px;
+	opacity: 0;
+}
+/*==导航栏==*/
