@@ -1,0 +1,11 @@
+你好,{{ user.username }}!
+
+欢迎来到信工科协！
+
+请点击下面的链接以便确认你的账户：
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+信息工程学院学生科学技术协会
+
+注意：请不要回复此邮件，如有问题请联系管理员
