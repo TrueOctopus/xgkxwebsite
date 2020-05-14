@@ -1,28 +1,34 @@
 $(document).ready(function(){
 
 	//导航栏标签下拉
-	$(".dropdown").on({
-		mouseover:function(){
-			$(this).addClass("open")
-		},
-		mouseout:function(){
-			$(this).removeClass("open")
-		}
-	})
+	$(".dropdown").hover(function(){$(this).addClass("open")},function(){$(this).removeClass("open")})
 
-	//导航栏自动隐藏
-	var t1=0,t2=0;
+	//导航栏自动隐藏及变色
+	var t1=0,t2=0,t3;
+	$(window).width()>991?t3=200:t3=50;
 	$(window).on('scroll',function(){
-		if($(window).scrollTop() > 350){
+		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
-				$('.navbar').addClass('navhidden');
+				$('.navbar').addClass('navhidden').removeClass('ontop');
 			}
 			else{
-				$('.navbar').removeClass('navhidden');
+				$('.navbar').removeClass('navhidden').removeClass('ontop')//背景
+				$('.navbar-toggle.pull-left>span').css('background','#0a8aff')//菜单按钮
+				$('.navbar-header>a>img:eq(1)').fadeOut(200)//左端图片
+				$('.navbar-right>button').addClass('bgshow')//按钮
 			}
 		}
 		else {
-			$('.navbar').removeClass('navhidden');
+			$('.navbar').removeClass('navhidden').addClass('ontop')//背景
+			$('.navbar-toggle.pull-left>span').css('background','#FFF')//菜单按钮
+			$('.navbar-right>button').removeClass('bgshow')//按钮
+			if(t3==200){
+				$('.navbar-header>a>img:eq(1)').fadeIn(200)
+			}//仅限宽屏
+			else{
+				
+			}//仅限窄屏
+			
 		}
 	})
 	var scrollFunc=function(e){
@@ -49,14 +55,14 @@ $(document).ready(function(){
 		})
 	}
 	function changespan() {
-		n>7?n=4:n=n;
-		n+1>7?nn=4:nn=n;
-		spanhidden("span:eq("+n+")",0.5);
+		n>2?n=-1:n=n;
+		n+1>2?nn=-1:nn=n;
+		spanhidden(".p1_text1>span:eq("+n+")",0.5);
 		if($(window).width()<=991){
-			setTimeout(function(){$("span:eq("+nn+")").addClass("show")},500);
+			setTimeout(function(){$(".p1_text1>span:eq("+nn+")").addClass("show")},500);
 		}
 		else{
-			setTimeout(function(){$("span:eq("+nn+")").addClass("show")},510);
+			setTimeout(function(){$(".p1_text1>span:eq("+nn+")").addClass("show")},510);
 		}
 		n++;
 		nn++;

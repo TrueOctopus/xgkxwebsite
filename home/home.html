@@ -13,22 +13,21 @@
 </head>
 <body>
 <!-- 导航栏 -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top ontop">
   <div class="container center-block">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-left: 10px;">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="first-line"></span>
+        <span class="second-line"></span>
+        <span class="third-line"></span>
       </button>
-      <a href="#"><img src="pic/logowhite2.png" /></a>
+      <a href="#"><img src="pic/logoskyblue2.png" /><img src="pic/logowhite2.png" /></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         <li class="active"><a href="#">主页<span class="sr-only">(current)</span></a></li>
         <li><a href="#">公告</a></li>
         <li><a href="#">活动</a></li>
@@ -64,17 +63,20 @@
 				<button class="btn btn-default btn-lg p1_bt2" type="submit">Explore the Docs</button>
 			</div>
 			<div class="col-md-5">
-				<img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/illu_homepage_studioiv-042b87b2f41fe6d0c5943b12f6cd1ff2a227dc84e3a7e76f2b8d57c05f1b1da4.png">
+				<img src="pic/big.svg">
 			</div>
 		</div>
 	</div>
 </div><!-- /页面头部 -->
 
 <div class="part2"><!-- 内容 -->
+	<div class="wave"></div>
 	<div class="container">
 		<div class="row"><!-- part1 -->
 			<div class="col-md-6 p2_l">
-				<img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/switch-from-jenkins-6970e1be53e7adf682ecf62483f9c5544d8d2d53af98136f3f96375cba2ae610.png">
+				<div class="center-block">
+					<img src="pic/code.svg">
+				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="p2_1_text1">CI that’s built for the cloud.Make the switch from Jenkins.</div>
@@ -87,14 +89,14 @@
 				<div class="p2_2_text1">Start up innovation, enterprise scale</div>
 				<div class="p2_2_text2">Whether you need the simplicity of a cloud-hosted solution or the control of hosting on your own private infrastructure, we have options.</div>
 				<button class="btn btn-default btn-lg p2_bt2" type="submit">Learn More</button>
-				<div class="row" style="margin-top: 80px;">
+				<div class="row p2_2" style="margin-top: 80px;">
 					<div class="col-md-6 text-center">
-						<img src="https://d3r49iyjzglexf.cloudfront.net/icons/product/ic-cloud-b9bb431c72804b1846f48a24682d91a7cb1a5949eacae9201227196a56faf454.svg">
+						<img src="pic/cloud.svg">
 						<div class="p2_2_text3">Cloud</div>
 						<div class="p2_2_text4">We oversee the setup, security, and maintenance of your continuous integration instance(s).</div>
 					</div>
 					<div class="col-md-6 text-center">
-						<img src="https://d3r49iyjzglexf.cloudfront.net/icons/product/ic-server-e0cce0bab43bd5f24b8f4276376301a8142a5239d53b3d7f7dc4f86c22d10b79.svg">
+						<img src="pic/sever.svg">
 						<div class="p2_2_text3">Sever</div>
 						<div class="p2_2_text4">Install CircleCI on a private server that your team sets up and maintains for security.</div>
 					</div>
@@ -102,7 +104,7 @@
 			</div>
 		</div>
 	</div>
-	<div style="background-color: #F3F3F3;"><!-- 轮播图 --><!-- part3 -->
+	<div style="background-color: #f5f6fa;"><!-- 轮播图 --><!-- part3 -->
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
