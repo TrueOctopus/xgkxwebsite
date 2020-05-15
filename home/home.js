@@ -1,7 +1,23 @@
 $(document).ready(function(){
 
 	//导航栏标签下拉
-	$(".dropdown").hover(function(){$(this).addClass("open")},function(){$(this).removeClass("open")})
+	$(".dropdown").hover(function(){
+		$(this).addClass("open")
+		var dropdownli=$('.dropdown>.dropdown-menu>li>').length,n=0;
+		function lirightin(){
+			$('.dropdown>.dropdown-menu>li:eq('+n+')').css('display','block')
+			n++;
+			if (n==dropdownli) {
+				n=0;
+				clearInterval(rightin);
+			}
+		}
+		rightin=setInterval(lirightin,80);
+	},
+	function(){
+		$(this).removeClass("open")
+		$('.dropdown>.dropdown-menu>li').css('display','none')
+	})
 
 	//导航栏自动隐藏及变色
 	var t1=0,t2=0,t3;
@@ -10,18 +26,17 @@ $(document).ready(function(){
 		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
 				$('.navbar').addClass('navhidden').removeClass('ontop');
+				$('.scrolltop').addClass('in')
 			}
 			else{
-				$('.navbar').removeClass('navhidden').removeClass('ontop')//背景
-				$('.navbar-toggle.pull-left>span').css('background','#0a8aff')//菜单按钮
+				$('.navbar').removeClass('navhidden').removeClass('ontop')
 				$('.navbar-header>a>img:eq(1)').fadeOut(200)//左端图片
-				$('.navbar-right>button').addClass('bgshow')//按钮
+				$('.scrolltop').addClass('in')
 			}
 		}
 		else {
-			$('.navbar').removeClass('navhidden').addClass('ontop')//背景
-			$('.navbar-toggle.pull-left>span').css('background','#FFF')//菜单按钮
-			$('.navbar-right>button').removeClass('bgshow')//按钮
+			$('.navbar').removeClass('navhidden').addClass('ontop')
+			$('.scrolltop').removeClass('in')
 			if(t3==200){
 				$('.navbar-header>a>img:eq(1)').fadeIn(200)
 			}//仅限宽屏
@@ -72,4 +87,7 @@ $(document).ready(function(){
 
 	//轮播图高度统一
 	$(".carousel-inner>.item:eq(0)").height()<$(".carousel-inner>.item:eq(1)").height() ? $(".carousel-inner>.item:eq(0)").height($(".carousel-inner>.item:eq(1)").height()) : $(".carousel-inner>.item:eq(1)").height($(".carousel-inner>.item:eq(0)").height());
+
+	//上滚到顶部事件
+	$('.scrolltop').click(function(){$('html,body').animate({scrollTop:0},300)})
 })
