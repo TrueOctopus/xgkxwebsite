@@ -1,0 +1,296 @@
+/* 公共样式表css */
+html,body {
+    color: #333;
+    margin: 0;
+    height: 100%;
+    font-family: "Myriad Set Pro","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    background: #fff;
+    color: #666;
+    font: 12px/150% Arial,Verdana, "microsoft yahei";
+}
+
+html, body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, pre, button, fieldset, form, input, legend, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #08acee;
+}
+
+button {
+    outline: 0;
+}
+
+img {
+    border: 0;
+}
+
+button,input,optgroup,select,textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+}
+
+/* 必要布局样式css */
+.ato-content {
+    width: 1180px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.ato-list ul {
+    height: 470px;
+}
+
+.ato-list ul li {
+	margin-top:30px;
+    width: 270px;
+    height: 420px;
+    float: left;
+    margin-left: 26px;
+    margin-right: 0;
+    text-align: center;
+    background-color: #fff;
+    -webkit-transition: height 300ms;
+    -moz-transition: height 300ms;
+    -ms-transition: height 300ms;
+    -o-transition: height 300ms;
+    transition: height 300ms;
+    position: relative;
+    box-shadow: 1px 0px 8px rgba(0,0,0,0.12);
+    top: 10px;
+    left: -10px;
+}
+
+.ato-list ul li:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0px 2px rgba(0,0,0,0.24);
+}
+
+.ato-list ul li div {
+    width: 270px;
+    margin: 30px 0 25px 0;
+    text-align: center;
+}
+
+.ato-list ul li div img {
+    width: 38%;
+    height: auto;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.ato-list ul li h3 {
+    font-size: 14px;
+    color: #244e6f;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.ato-list ul li p {
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+    color: #8e8e8e;
+    line-height: 25px;
+    padding: 0 22px 20px 22px;
+}
+
+.ato-more {
+    width: 157px;
+    height: 36px;
+    text-align: center;
+    display: none;
+    display: inline-block;
+    border: 1px solid #7D7D7D;
+    line-height: 34px;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 30px;
+    left: 55px;
+}
+
+.ato-more:hover {
+    background-color: #108cee;
+    border-color: #108CEE;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #FFF;
+}
+
+.ato-list-fl {
+    float: left;
+}
+
+.ato-title {
+    width: 266px;
+    margin-top: 130px;
+    padding-right: 20px;
+}
+
+.ato-title h2 {
+    font-size: 24px;
+    line-height: 33px;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    font-weight: inherit;
+}
+
+.ato-title p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 26px;
+}
+
+.ato-list-fl a {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-top: 54px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid #ABABAB;
+    display: block;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+
+.ato-list-fl a img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    border: none;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.ato-list {
+    float: left;
+    width: 910px;
+    height: 500px;
+}
+
+.ato-list ul li:hover {
+    top: -5px;
+    box-shadow: 0 10px 12px rgba(0,0,0,0.12);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s
+}
+
+.prev:hover .ato-ope {
+    opacity: 0;
+}
+
+.ato-ope1 {
+    opacity: 0;
+}
+
+.prev:hover .ato-ope1 {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 11px;
+}
+
+.prev:hover .ato-ope {
+    opacity: 0;
+}
+
+.ato-ope1 {
+    opacity: 0;
+}
+
+.prev:hover .ato-ope1 {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 11px;
+}
+
+.next:hover .ato-ope {
+    opacity: 0;
+}
+
+.ato-ope1 {
+    opacity: 0;
+}
+
+.next:hover .ato-ope1 {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 11px;
+}
+
+.next:hover .ato-ope {
+    opacity: 0;
+}
+
+.ato-ope1 {
+    opacity: 0;
+}
+
+.next:hover .ato-ope1 {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    right: 11px;
+}
+
+.ato-list-fl a:hover {
+    background: #108cee;
+    border: 1px solid #108cee;
+}
