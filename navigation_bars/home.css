@@ -1,8 +1,12 @@
 /*导航栏整体*/
 .navbar{
-	transition: top 0.3s,opacity 0.3s;
+	transition: top 0.3s,opacity 0.3s,background 0.3s;
 	min-height: 70px;
 	border-color: transparent;
+	background-color: #FFF;
+	box-shadow:0 0 9px 3px rgba(50,29,154,.2);
+	font-size: 16px;
+	font-weight: 500;
 }
 .navbar>div{
 	max-width: 1170px;
@@ -10,68 +14,186 @@
 .navbar>div>div{
 	margin-top: 10px;
 }
-.navbar-inverse{
-	background-color: #161616;
+.navbar-collapse{
+	max-height: inherit !important;
+	border-top: 0;
 }
-/*导航栏左端图片*/
+/*左端图片*/
 .navbar-header img{
-	max-height: 55px;
+	height: 55px;
 	margin-right: 20px;
+	position: absolute;
 }
-/*导航栏未选中标签*/
-.navbar-inverse .navbar-nav>li>a{
-	color: #FFFFFF;
+.navbar-header>a{
+	position: relative;
+}
+/*标签*/
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus{
+	color: #0a8aff;
 	height: 60px;
 	padding: 15px 20px;
-}
-.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.open>a:hover{
 	transition: color 0.2s;
-	background-color: #161616;
-	color: #2ABD4A;
+	background-color: inherit;
 }
-/*导航栏选中标签*/
-.navbar-inverse .navbar-nav>.active>a{
-	background-color: #161616;
-	color: #FFFFFF;
-	transition: color 0.2s;
-}
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>.open>a:hover,
 .navbar-inverse .navbar-nav>.active>a:hover{
-	background-color: #161616;
-	color: #2ABD4A;
+	background-color: inherit;
+	color: #321D9A;
 }
-/*导航栏下拉框*/
+/*左侧标签*/
+.navbar-left{
+	margin-left: 150px;
+}
+/*右侧标签*/
+.nav.navbar-nav.navbar-right>li>a:hover{
+	color: #2cd4d9;
+}
+/*下拉标签*/
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus{
+	background-color: transparent;
+}
+/*下拉框*/
+.dropdown-menu{
+	height: 190px;
+	display: none;
+	animation: dropdown 0.8s;
+	overflow: hidden;
+	border-radius: 5% !important;
+	background-color: rgba(255,255,255,0.9);
+	border-color: rgba(50,29,154,.2);
+	box-shadow:0 0 5px 0px rgba(50,29,154,.2);
+}
+.dropdown-menu>li{
+	position: relative;
+	display: none;
+	left: 0;
+	animation: rightin 0.5s;
+}
 .dropdown-menu>li>a{
 	padding: 8px 20px;
+	color: #080245;
 }
 .dropdown-menu>li>a:hover{
-	color: #2ABD4A;
+	color: #0a8aff;
 	background-color: inherit;
+}
+@keyframes dropdown{
+	from{height: 0;}
+}
+@keyframes rightin{
+	from{
+		left: 50px;
+		opacity: 0;
+	}
 }
 /*导航栏按钮*/
 .navbar-right>button{
 	margin-top: 3px;
 	margin-left: 15px;
 	color: #FFFFFF;
+	border: 0;
+	background: linear-gradient(30deg,transparent,transparent,transparent,#008ded,#008ded,#00e8d3,#00e8d3,#008ded,#008ded);
+	background-size: 800%;
+	background-position: 50% 0;
 	font-weight: 600;
-	background-color: #04AA51;
-	border-color: #04AA51;
-	transition: background-color 0.2s;
+	box-shadow: 0 0 9px -2px rgba(50,29,154,.2);
+	transition: background 0.3s,box-shadow 0.3s,color 0.3s;
 }
 .navbar-right>button:hover{
-	color: #FFFFFF;
-	background-color: #049B4A;
-	border-color: #049B4A;
+	color: #FFF;
+	background-position: 90% 0 !important;
+	transition: background-position 0.5s;
 }
 .navbar-right>button:focus{
 	color: #FFFFFF !important;
-	background-color: #048C43 !important;
-	border-color: #048C43 !important;
+	background-color: #008ded !important;
+	border-color: transparent !important;
 }
 /*导航栏隐藏*/
 .navhidden{
 	top: -70px;
 	opacity: 0;
 }
+/*菜单按钮动画*/
+.navbar-toggle.pull-left{
+	border: 0;
+}
+.navbar-toggle.pull-left:focus,
+.navbar-toggle.pull-left:hover{
+	background-color: inherit;
+}
+.navbar-toggle.pull-left>span{
+	width: 25px;
+	height: 2px;
+	margin-bottom: 4px;
+	display: block;
+	border-radius: 1px;
+	background-color: #0a8aff;
+	transition: transform 0.3s,opacity 0.3s;
+}
+.navbar-toggle.pull-left:not(.collapsed)>.first-line{
+	transform: rotate(45deg) translate(3.5px,5px);
+}
+.navbar-toggle.pull-left:not(.collapsed)>.second-line{
+	transform: translateX(10px);
+	opacity: 0;
+}
+.navbar-toggle.pull-left:not(.collapsed)>.third-line{
+	transform: rotate(-45deg) translate(3px,-5px);
+}
+/*居于顶部的导航栏样式*/
+.navbar.ontop{
+	background-color: transparent;
+	box-shadow: none;
+}
+.navbar-inverse.ontop .navbar-nav>li>a,
+.navbar-inverse.ontop .navbar-nav>.open>a,
+.navbar-inverse.ontop .navbar-nav>.active>a{
+	color: #FFF;
+}
+.navbar-inverse.ontop .navbar-nav>li>a:hover,
+.navbar-inverse.ontop .navbar-nav>.open>a:hover,
+.navbar-inverse.ontop .navbar-nav>.active>a:hover{
+	color: #2cd4d9;
+}
+.navbar-inverse.ontop .navbar-right>button{
+	box-shadow: none;
+	background-position: 0%;
+}
+.navbar-inverse.ontop .navbar-right>button:hover{
+	background-color: transparent;
+	background-position: 50% !important;
+}
+.ontop .navbar-toggle.pull-left>span{
+	background-color: #FFF;
+}
+.scrolltop{
+	position: fixed;
+	opacity: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	color: #008ded;
+	right: 0;
+	bottom: -50px;
+	z-index: 999;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.scrolltop.in{
+	bottom: 0px;
+	opacity: 1;
+}
+.scrollanimation{
+	display: none;
+}
+
 
 @media screen and (max-width: 991px){
 	.navhidden{
@@ -79,15 +201,50 @@
 	}
 	.navbar{
 		min-height: 50px;
+		overflow-x: hidden;
+	}
+	.navbar-header>a>img{
+		position: relative;
+	}
+	.navbar-header>a>img:nth-child(2){
+		display: none;
 	}
 	.navbar-header img{
 		max-height: 45px;
-		margin-right: 20px;
+	}
+	.navbar-inverse.ontop .navbar-nav>li>a,
+	.navbar-inverse.ontop .navbar-nav>.active>a{
+		color: #0a8aff;
+	}
+	.navbar-left{
+		margin-left: 0px;
+	}
+	.navbar-right{
+		position: relative;
+		left: 15px;
+	}
+	.navbar-right>.navbar-btn{
+		margin-left: 0;
 	}
 	.navbar-inverse .navbar-nav>li>a{
 		color: #FFFFFF;
 		height: 50px;
 		padding: 15px 15px;
 	}
-}
-/*==导航栏==*/
+	.navbar-collapse.collapse.in,
+	.navbar-collapse.collapsing{
+		background-color: #FFF;
+		color: #0a8aff;
+		overflow-x: hidden;
+	}
+	.navbar-inverse .navbar-nav>li>a,
+	.navbar-inverse .navbar-nav>.active>a{
+		color: #0a8aff;
+	}
+	.dropdown-menu>li>a{
+		color: #2cd4d9 !important;
+	}
+	.navbar-right>button{
+		background-position: 50% !important;
+	}
+	/*==导航栏==*/
