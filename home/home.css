@@ -257,8 +257,9 @@ a:visited{
 }
 .p1_bt1:focus{
 	color: #FFFFFF !important;
-	background-color: #048C43 !important;
-	border-color: #048C43 !important;
+	background-position: 100% 0;
+	background-color: #008ded !important;
+	border: 0 !important;
 }
 .p1_bt2{
 	color: rgba(255,255,255,0.9);
@@ -271,6 +272,10 @@ a:visited{
 	color: #008ded;
 	border-color: #008ded;
 	background-color: rgba(255,255,255,0.95);
+}
+.p1_bt2:focus{
+	color: #008ded !important;
+	border-color: #008ded;
 }
 .wave,
 .bwave{
@@ -300,6 +305,9 @@ a:visited{
 	max-width: 1170px;
 	padding: 100px 0;
 	border-bottom: 1px solid #F3F3F3;
+}
+.part2>div>div:nth-last-child(1){
+	border-bottom: 0;
 }
 .p2_l>div{
 	width: 65%;
@@ -339,11 +347,6 @@ a:visited{
 	border: 1px solid #008ded !important;
 	background-color: transparent;
 }
-.mybtn:focus{
-	color: #FFF !important;
-	border: 1px solid #008ded !important;/*这句不知为何没用*/
-	background-color: #FFFFFF !important;
-}
 .mybtn{
 	transition: all 0.3s;
 	position: relative;
@@ -354,6 +357,11 @@ a:visited{
 	z-index: 2;
 	transition: font-size 0.35s;
 	transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.mybtn:focus{
+	color: #FFF !important;
+	border: 1px solid #008ded !important;/*这句不知为何没用*/
+	background-color: #FFFFFF !important;
 }
 .mybtn:hover{
 	color: #FFF;
@@ -456,14 +464,22 @@ a:visited{
 	margin-bottom: 40px;
 }
 .p2_4{
-	border-bottom: 0 !important;
 	padding-bottom: 30px !important;
 }
 .p2_4>.row{
 	margin-right: 5px;
 }
+.p2_4>.row>div{
+	transform: scale(0.9);
+	background-color: #FFF;
+	box-shadow: 0 14px 45px 0 rgba(205,205,205,.35);
+	transition: all 0.2s;
+}
+.p2_4>.row>div:hover{
+	transform: scale(0.88);
+}
 .p2_4>.row>div>a>img{
-	margin: 10px;
+	transform: scale(0.95);
 }
 .p2_4_text2{
 	font-size: 20px;
@@ -476,13 +492,10 @@ a:visited{
 	font-weight: 500;
 	color: #555555;
 	margin: 10px;
-	margin-bottom: 100px;
+	margin-bottom: 80px;
 }
 .p2_4>.row>div:hover .p2_4_text2{
 	color: #2cd4d9;
-}
-.p2_4>.row>div:hover img{
-	filter: brightness(0.9);
 }
 .part3{
 	background: linear-gradient(to top,rgb(42,22,155) 39%,rgb(41,137,216) 78%,rgb(44,212,217) 95%);
@@ -652,7 +665,8 @@ a:visited{
 	}
 	/*==导航栏==*/
 	.part1{
-		padding: 70px 0;
+		padding-top: 50px;
+		padding-bottom: 200px;
 		background-image: linear-gradient(130deg,#2A169B,#2CD4D9);
 	}
 	.p1_l{
@@ -691,11 +705,11 @@ a:visited{
 		line-height: 1.3;
 		font-size: 17px;
 	}
+	.p2_4>.row>div{
+		padding-bottom: 10px;
+	}
 	.p2_4>.row>div>a>img{
 		width: 100%;
-	}
-	.p2_4_text3{
-		margin-bottom: 50px;
 	}
 	.more{
 		padding: 45px 0;
