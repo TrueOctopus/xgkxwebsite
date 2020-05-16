@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$(window).on('scroll',function(){
 		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
-				$('.navbar').addClass('navhidden').removeClass('ontop');
+				$('.navbar').addClass('navhidden').removeClass('ontop')
 				$('.scrolltop').addClass('in')
 			}
 			else{
@@ -43,8 +43,14 @@ $(document).ready(function(){
 			else{
 				
 			}//仅限窄屏
-			
 		}
+		//滚动动画
+		p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
+		$('.part1>div>.row').css('bottom',p1top/2-70)
+		/*worktop=$('.scrollanimation').offset().top - $(window).scrollTop();
+		if(worktop<$(window).height()-50){
+			$('.scrollanimation').fadeIn(1000);
+		}*/
 	})
 	var scrollFunc=function(e){
 	    e=e || window.event;
@@ -90,4 +96,18 @@ $(document).ready(function(){
 
 	//上滚到顶部事件
 	$('.scrolltop').click(function(){$('html,body').animate({scrollTop:0},300)})
+
+	//鼠标移动事件
+	/*$("body").on("mousemove",function(e){
+		pX=e.pageX-$(this).offset().left;  
+     	pY=e.pageY-$(this).offset().top;
+		$(".part1>div>div>div>img").css({
+			'left':-(pX-800)/8,
+			'top':-(pY-500)/8,
+		})
+		$(".p1_l").css({
+			'left':-(pX-1000)/3,
+			'top':-(pY-500)/3,
+		})
+	})*/
 })
