@@ -98,7 +98,7 @@ $(document).ready(function(){
 	$('.scrolltop').click(function(){$('html,body').animate({scrollTop:0},300)})
 
 	//鼠标移动事件
-	/*$("body").on("mousemove",function(e){
+	$("body").on("mousemove",function(e){
 		pX=e.pageX-$(this).offset().left;  
      	pY=e.pageY-$(this).offset().top;
 		$(".part1>div>div>div>img").css({
@@ -109,5 +109,5 @@ $(document).ready(function(){
 			'left':-(pX-1000)/3,
 			'top':-(pY-500)/3,
 		})
-	})*/
+	})
 })
