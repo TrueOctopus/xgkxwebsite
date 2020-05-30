@@ -33,8 +33,7 @@
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus{
 	color: #0a8aff;
-	height: 60px;
-	padding: 15px 20px;
+	padding: 15px 15px;
 	transition: color 0.2s;
 	background-color: inherit;
 }
@@ -59,11 +58,10 @@
 }
 /*下拉框*/
 .dropdown-menu{
-	height: 190px;
 	display: none;
 	animation: dropdown 0.8s;
 	overflow: hidden;
-	border-radius: 5% !important;
+	border-radius: 8px !important;
 	background-color: rgba(255,255,255,0.9);
 	border-color: rgba(50,29,154,.2);
 	box-shadow:0 0 5px 0px rgba(50,29,154,.2);
@@ -196,7 +194,9 @@ a:visited{
 	max-width: 1170px;
 	margin: 0 auto;
 	position: relative;
+	transition: bottom 0.02s;
 	z-index: 0;
+	animation: topins 1s;
 }
 .p1_l{
 	padding-top: 70px;
@@ -289,7 +289,7 @@ a:visited{
 	animation: wave 10s linear infinite;
 }
 .bwave{
-	top: 58px;
+	top: -2px;
 	transform: rotateX(180deg);
 }
 @keyframes wave{
@@ -314,6 +314,9 @@ a:visited{
 	padding: 20px 50px;
 	background-image: url(pic/bg4.svg);
 	background-repeat: no-repeat;
+}
+.p2_r{
+	opacity: 0;
 }
 .p2_1_text1,
 .p2_2_text1{
@@ -380,7 +383,6 @@ a:visited{
 	height: 500%;
 	position: absolute;
 	transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 	z-index: 1;
 }
@@ -467,7 +469,7 @@ a:visited{
 	padding-bottom: 30px !important;
 }
 .p2_4>.row{
-	margin-right: 5px;
+	margin: 0;
 }
 .p2_4>.row>div{
 	transform: scale(0.9);
@@ -477,6 +479,7 @@ a:visited{
 }
 .p2_4>.row>div:hover{
 	transform: scale(0.88);
+	box-shadow: 0 4px 20px 0 rgba(205,205,205,.5);
 }
 .p2_4>.row>div>a>img{
 	transform: scale(0.95);
@@ -524,6 +527,13 @@ a:visited{
 	background-image: linear-gradient(to right,rgb(42,22,155) 10%,rgb(41,137,216) 50%,rgb(44,212,217) 95%);
 	border:0;
 }
+/*.part3>.more:nth-child(3){
+	padding-bottom: 0;
+	transition: 3s;
+}
+.part3>.more:nth-child(3).bottomin_s{
+	padding-bottom: 90px;
+}*/
 .b_top{
 	padding-bottom: 10px;
 	border-bottom: 1px solid rgba(44,212,217,.2);
@@ -593,10 +603,52 @@ a:visited{
 	bottom: 0px;
 	opacity: 1;
 }
-.scrollanimation{
-	display: none;
+@keyframes leftins{
+	from{
+		left: -100px;
+		opacity: 0;
+	}
+	to{
+		left: 0;
+	}
 }
-
+.leftin_s{animation: leftins 1s;}
+@keyframes rightins{
+	from{
+		right: -100px;
+		opacity: 0;
+	}
+	to{
+		right: 0;
+	}
+}
+.rightin_s{animation: rightins 1s;}
+@keyframes topins{
+	from{
+		position: relative;
+		top: -50px;
+		opacity: 0;
+	}
+	to{
+		position: relative;
+		top: 0;
+	}
+}
+.topin_s{animation: topins 1s;}
+@keyframes bottomins{
+	from{
+		position: relative;
+		bottom: -150px;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		/*opacity: 0;*/
+	}
+	to{
+		position: relative;
+		bottom: 0;
+	}
+}
+.bottomin_s{animation: bottomins 2s;}
 
 
 
@@ -662,6 +714,12 @@ a:visited{
 	}
 	.navbar-right>button{
 		background-position: 50% !important;
+	}
+	.navbar.ontop{
+		background-color: #FFF;
+	}
+	.ontop .navbar-toggle.pull-left>span{
+		background-color: #0a8aff;
 	}
 	/*==导航栏==*/
 	.part1{

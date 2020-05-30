@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
 	//导航栏标签下拉
+	var dropdownli=$('.dropdown>.dropdown-menu>li').length;
+	$(".nav>.dropdown>.dropdown-menu").css('height',dropdownli*36+10)
 	$(".dropdown").hover(function(){
 		$(this).addClass("open")
-		var dropdownli=$('.dropdown>.dropdown-menu>li>').length,n=0;
+		var n=0;
 		function lirightin(){
 			$('.dropdown>.dropdown-menu>li:eq('+n+')').css('display','block')
 			n++;
@@ -25,7 +27,7 @@ $(document).ready(function(){
 	$(window).on('scroll',function(){
 		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
-				$('.navbar').addClass('navhidden').removeClass('ontop')
+				$('.navbar').addClass('navhidden')
 				$('.scrolltop').addClass('in')
 			}
 			else{
@@ -45,12 +47,21 @@ $(document).ready(function(){
 			}//仅限窄屏
 		}
 		//滚动动画
-		p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
-		$('.part1>div>.row').css('bottom',p1top/2-70)
-		/*worktop=$('.scrollanimation').offset().top - $(window).scrollTop();
-		if(worktop<$(window).height()-50){
-			$('.scrollanimation').fadeIn(1000);
-		}*/
+		/*p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
+		$('.part1>div>.row').css('bottom',p1top/2-70)*/
+		scrollanimation('.p2_2>div:eq(0)','rightin_s');
+		scrollanimation('.p2_2>div:eq(1)','leftin_s');
+		scrollanimation('.p2_r','leftin_s');
+		scrollanimation('.p2_2_text2,.p2_bt2','topin_s');
+		scrollanimation('.p2_4>.row>div','leftin_s');
+		scrollanimation('footer,.part3>.more','bottomin_s');
+		function scrollanimation(id,cla){
+			$(id).css('opacity','0')
+			worktop=$(id).offset().top - $(window).scrollTop();
+			if(worktop<$(window).height()){
+				$(id).addClass(cla).css('opacity','1')
+			}
+		}
 	})
 	var scrollFunc=function(e){
 	    e=e || window.event;
@@ -98,7 +109,7 @@ $(document).ready(function(){
 	$('.scrolltop').click(function(){$('html,body').animate({scrollTop:0},300)})
 
 	//鼠标移动事件
-	$("body").on("mousemove",function(e){
+	/*$("body").on("mousemove",function(e){
 		pX=e.pageX-$(this).offset().left;  
      	pY=e.pageY-$(this).offset().top;
 		$(".part1>div>div>div>img").css({
@@ -109,5 +120,5 @@ $(document).ready(function(){
 			'left':-(pX-1000)/3,
 			'top':-(pY-500)/3,
 		})
-	})
+	})*/
 })
