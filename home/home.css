@@ -186,16 +186,19 @@ a:visited{
 	text-decoration: inherit;
 }
 .part1{
-	padding: 150px 0px;
 	color: #FFFFFF;
+	position: fixed;
+	padding-top: 150px;
+	padding-bottom: 200px;
+	width: 100%;
+	top: 0;
 	background-image: linear-gradient(to right,#2A169B,#2CD4D9);
 }
 .part1>div>div{
 	max-width: 1170px;
-	margin: 0 auto;
 	position: relative;
 	transition: bottom 0.02s;
-	z-index: 0;
+	z-index: 8;
 	animation: topins 1s;
 }
 .p1_l{
@@ -610,9 +613,10 @@ a:visited{
 	}
 	to{
 		left: 0;
+		opacity: 1;
 	}
 }
-.leftin_s{animation: leftins 1s;}
+.leftin_s{animation: leftins 1s forwards;}
 @keyframes rightins{
 	from{
 		right: -100px;
@@ -620,9 +624,10 @@ a:visited{
 	}
 	to{
 		right: 0;
+		opacity: 1;
 	}
 }
-.rightin_s{animation: rightins 1s;}
+.rightin_s{animation: rightins 1s forwards;}
 @keyframes topins{
 	from{
 		position: relative;
@@ -632,9 +637,10 @@ a:visited{
 	to{
 		position: relative;
 		top: 0;
+		opacity: 1;
 	}
 }
-.topin_s{animation: topins 1s;}
+.topin_s{animation: topins 1s forwards;}
 @keyframes bottomins{
 	from{
 		position: relative;
@@ -646,9 +652,10 @@ a:visited{
 	to{
 		position: relative;
 		bottom: 0;
+		opacity: 1;
 	}
 }
-.bottomin_s{animation: bottomins 2s;}
+.bottomin_s{animation: bottomins 2s forwards;}
 
 
 
@@ -724,8 +731,15 @@ a:visited{
 	/*==导航栏==*/
 	.part1{
 		padding-top: 50px;
-		padding-bottom: 200px;
+		padding-bottom: 50px;
+		position: relative;
 		background-image: linear-gradient(130deg,#2A169B,#2CD4D9);
+	}
+	.part1>div>div{
+		position: relative;
+		transition: bottom 0.02s;
+		z-index: 8;
+		animation: topins 1s;
 	}
 	.p1_l{
 		text-align: center;

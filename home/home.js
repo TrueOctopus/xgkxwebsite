@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 	//导航栏自动隐藏及变色
 	var t1=0,t2=0,t3;
-	$(window).width()>991?t3=200:t3=50;
+	$(window).width()>991?t3=500:t3=50;
 	$(window).on('scroll',function(){
 		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
@@ -39,42 +39,35 @@ $(document).ready(function(){
 		else {
 			$('.navbar').removeClass('navhidden').addClass('ontop')
 			$('.scrolltop').removeClass('in')
-			if(t3==200){
+			if(t3==500){
 				$('.navbar-header>a>img:eq(1)').fadeIn(200)
 			}//仅限宽屏
 			else{
 				
 			}//仅限窄屏
 		}
-		//滚动动画
-		/*p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
-		$('.part1>div>.row').css('bottom',p1top/2-70)*/
-		scrollanimation('.p2_2>div:eq(0)','rightin_s');
-		scrollanimation('.p2_2>div:eq(1)','leftin_s');
-		scrollanimation('.p2_r','leftin_s');
-		scrollanimation('.p2_2_text2,.p2_bt2','topin_s');
-		scrollanimation('.p2_4>.row>div','leftin_s');
-		scrollanimation('footer,.part3>.more','bottomin_s');
-		function scrollanimation(id,cla){
-			$(id).css('opacity','0')
-			worktop=$(id).offset().top - $(window).scrollTop();
-			if(worktop<$(window).height()){
-				$(id).addClass(cla).css('opacity','1')
+		//part1底部隐藏
+		if(t3==500){
+			if($(window).scrollTop() > 1000){
+				$(".part1").css('opacity','0')
+			}
+			else{
+				$(".part1").css('opacity','1')
 			}
 		}
+		/*p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
+		$('.part1>div>.row').css('bottom',p1top/2-70)*/
 	})
-	var scrollFunc=function(e){
-	    e=e || window.event;
-	    if(e.wheelDelta){//IE/Opera/Chrome
-	        t1=e.wheelDelta;
-	    }else if(e.detail){//Firefox
-	        t2=e.detail;
-	    }
-	}
-	if(document.addEventListener){/*注册事件*/
-	    document.addEventListener('DOMMouseScroll',scrollFunc,false);
-	}//W3C
-	window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome
+
+	//part1高度填充
+	if(t3==500)
+		$(".part2").css('margin-top',$(".part1").height()+$(".part1>div>div").height()-110)
+	$(window).resize(function(){
+		if(t3==500)
+			$(".part2").css('margin-top',$(".part1").height()+$(".part1>div>div").height()-110)
+	})
+	
+
 	
 	//文字滚动
 	var n=4,nn=4;
@@ -107,6 +100,38 @@ $(document).ready(function(){
 
 	//上滚到顶部事件
 	$('.scrolltop').click(function(){$('html,body').animate({scrollTop:0},300)})
+
+	
+	//滚动出现动画
+	scrollappear('.p2_2>div:eq(0)','rightin_s');
+	scrollappear('.p2_2>div:eq(1)','leftin_s');
+	scrollappear('.p2_r','leftin_s');
+	scrollappear('.p2_2_text2,.p2_bt2','topin_s');
+	scrollappear('.p2_4>.row>div','leftin_s');
+	scrollappear('footer,.part3>.more:eq(0)','bottomin_s');
+	function scrollappear(id,effectclass){
+		$(id).css('opacity','0')
+		$(window).on('scroll',function(){
+			worktop=$(id).offset().top - $(window).scrollTop();
+			if(worktop<$(window).height()-150){
+				$(id).addClass(effectclass)
+			}
+		})
+	}
+
+	//滚轮动作获取
+	var scrollFunc=function(e){
+	    e=e || window.event;
+	    if(e.wheelDelta){//IE/Opera/Chrome
+	        t1=e.wheelDelta;
+	    }else if(e.detail){//Firefox
+	        t2=e.detail;
+	    }
+	}
+	if(document.addEventListener){/*注册事件*/
+	    document.addEventListener('DOMMouseScroll',scrollFunc,false);
+	}//W3C
+	window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome
 
 	//鼠标移动事件
 	/*$("body").on("mousemove",function(e){
