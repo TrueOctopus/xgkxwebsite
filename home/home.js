@@ -49,10 +49,10 @@ $(document).ready(function(){
 		//part1底部隐藏
 		if(t3==500){
 			if($(window).scrollTop() > 1000){
-				$(".part1").css('opacity','0')
+				$(".part1,#egg").css('opacity','0')
 			}
 			else{
-				$(".part1").css('opacity','1')
+				$(".part1,#egg").css('opacity','1')
 			}
 		}
 		/*p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
@@ -146,52 +146,29 @@ $(document).ready(function(){
 			'top':-(pY-500)/3,
 		})
 	})*/
-	var egg=0;
-	$(document).keydown(function(event){
-		if(event.keyCode==38)
-			egg=1;
-		if(egg==1&&event.keyCode==38)
-			egg=2;
-		// if(egg==1&&event.keyCode!=38)
-			// egg=0
-		if(egg==2&&event.keyCode==40)
-			egg=3;
-		// if(egg==2&&event.keyCode!=40)
-			// egg=0;
-		if(egg==3&&event.keyCode==40)
-			egg=4;
-		// if(egg==3&&event.keyCode!=40)
-			// egg=0;
-		if(egg==4&&event.keyCode==37)
-			egg=5;
-		// if(egg==4&&event.keyCode!=37)
-			// egg=0;
-		if(egg==5&&event.keyCode==39)
-			egg=6;
-		// if(egg==5&&event.keyCode!=39)
-			// egg=0;
-		if(egg==6&&event.keyCode==37)
-			egg=7;
-		// if(egg==6&&event.keyCode!=37)
-			// egg=0;
-		if(egg==7&&event.keyCode==39)
-			egg=8;
-		// if(egg==7&&event.keyCode!=39)
-			// egg=0;
-		if(egg==8&&event.keyCode==66)
-			egg=9;
-		// if(egg==8&&event.keyCode!=66)
-			// egg=0;
-		if(egg==9&&event.keyCode==65)
-			egg=10;
-		// if(egg==9&&event.keyCode!=65)
-			// egg=0;
-		if(egg==10&&event.keyCode==66)
-			egg=11;
-		// if(egg==10&&event.keyCode!=66)
-			// egg=0;
-		if(egg==11&&event.keyCode==65){
-			$("<iframe src='../jq_effects_library/jquery-cloud/index.html' style='position:fixed;top:0;left:0;width:100%;height:100%;border:0;z-index:100;'></iframe").appendTo("html")
-		}
-	})
+
+	//彩蛋
+	var sum = 0;
+        var k = false;
+        var i = 0;
+        document.onkeydown = function(){
+            var oEvent = window.event;
+            sum = sum + oEvent.keyCode;
+            if(sum == 38 || sum == 76 || sum == 116 || sum == 156 || sum == 193 || sum == 232 || sum == 269 || sum == 308 || sum == 374 || sum == 439 || sum == 505 || sum == 570){
+                k = true;
+                i = i+1;
+            }else{
+                k = false;
+                i = 0;
+            }
+            if(k && i == 12){
+                $("<iframe id='egg' src='../jq_effects_library/jquery-cloud/index.html'></iframe").appendTo("html")
+                sum = 0;
+                i = 0;
+            }else if(!k){
+                sum = 0;
+                i = 0;
+            }
+        }
+			
 })
