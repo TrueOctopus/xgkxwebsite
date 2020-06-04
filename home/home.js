@@ -146,4 +146,52 @@ $(document).ready(function(){
 			'top':-(pY-500)/3,
 		})
 	})*/
+	var egg=0;
+	$(document).keydown(function(event){
+		if(event.keyCode==38)
+			egg=1;
+		if(egg==1&&event.keyCode==38)
+			egg=2;
+		// if(egg==1&&event.keyCode!=38)
+			// egg=0
+		if(egg==2&&event.keyCode==40)
+			egg=3;
+		// if(egg==2&&event.keyCode!=40)
+			// egg=0;
+		if(egg==3&&event.keyCode==40)
+			egg=4;
+		// if(egg==3&&event.keyCode!=40)
+			// egg=0;
+		if(egg==4&&event.keyCode==37)
+			egg=5;
+		// if(egg==4&&event.keyCode!=37)
+			// egg=0;
+		if(egg==5&&event.keyCode==39)
+			egg=6;
+		// if(egg==5&&event.keyCode!=39)
+			// egg=0;
+		if(egg==6&&event.keyCode==37)
+			egg=7;
+		// if(egg==6&&event.keyCode!=37)
+			// egg=0;
+		if(egg==7&&event.keyCode==39)
+			egg=8;
+		// if(egg==7&&event.keyCode!=39)
+			// egg=0;
+		if(egg==8&&event.keyCode==66)
+			egg=9;
+		// if(egg==8&&event.keyCode!=66)
+			// egg=0;
+		if(egg==9&&event.keyCode==65)
+			egg=10;
+		// if(egg==9&&event.keyCode!=65)
+			// egg=0;
+		if(egg==10&&event.keyCode==66)
+			egg=11;
+		// if(egg==10&&event.keyCode!=66)
+			// egg=0;
+		if(egg==11&&event.keyCode==65){
+			$("<iframe src='../jq_effects_library/jquery-cloud/index.html' style='position:fixed;top:0;left:0;width:100%;height:100%;border:0;z-index:100;'></iframe").appendTo("html")
+		}
+	})
 })
