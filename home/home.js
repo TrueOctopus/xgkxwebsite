@@ -157,18 +157,38 @@ $(document).ready(function(){
             if(sum == 38 || sum == 76 || sum == 116 || sum == 156 || sum == 193 || sum == 232 || sum == 269 || sum == 308 || sum == 374 || sum == 439 || sum == 505 || sum == 570){
                 k = true;
                 i = i+1;
+	            //按键动效
+	            switch(oEvent.keyCode){
+	            	case 38:$(".part1>div>div").animate({top:"-15px"},10).animate({top:"0px"},100);break;
+	            	case 40:$(".part1>div>div").animate({top:"15px"},10).animate({top:"0px"},100);break;
+	            	case 37:$(".part1>div>div").animate({left:"-15px"},10).animate({left:"0px"},100);break;
+	            	case 39:$(".part1>div>div").animate({left:"15px"},10).animate({left:"0px"},100);break;
+	            	case 65:
+	            	case 66:$(".part1>div>div").css('animation','small 0.1s');
+	            		setTimeout(function(){$(".part1>div>div").css('animation','none')},100);
+	            }
             }else{
                 k = false;
                 i = 0;
             }
             if(k && i == 12){
-                $("<iframe id='egg' src='../jq_effects_library/jquery-cloud/index.html'></iframe").appendTo("html")
+            	if($("#egg").length>0){
+            		$("#egg").remove();
+	                $(".part2").css({'box-shadow':'none'})
+	                $(".wave").css('display','block')
+            	}
+            	else{
+            		$("<iframe id='egg' src='../jq_effects_library/jquery-cloud/index.html'></iframe").appendTo("html")
+	                $(".part2").css({'box-shadow':'0 -50px 50px 100px #fff'})
+	                $(".wave").css('display','none')
+            	}
                 sum = 0;
                 i = 0;
             }else if(!k){
                 sum = 0;
                 i = 0;
             }
+
         }
 			
 })
