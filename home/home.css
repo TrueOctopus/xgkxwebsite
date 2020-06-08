@@ -7,6 +7,7 @@
 	box-shadow:0 0 9px 3px rgba(50,29,154,.2);
 	font-size: 16px;
 	font-weight: 500;
+	z-index: 10000;
 }
 .navbar>div{
 	max-width: 1170px;
@@ -43,6 +44,16 @@
 	background-color: inherit;
 	color: #321D9A;
 }
+/*.active标签上方蓝条*/
+.navbar-inverse .navbar-nav>.active::after{
+	content: "";
+	width: 100%;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	transition: all 0.3s;
+	border-top: 3px solid #008ded;
+}
 /*左侧标签*/
 .navbar-left{
 	margin-left: 150px;
@@ -55,6 +66,13 @@
 .navbar-inverse .navbar-nav>.open>a,
 .navbar-inverse .navbar-nav>.open>a:focus{
 	background-color: transparent;
+}
+.navbar-inverse .navbar-nav>.dropdown>a>span{
+	transition: transform 0.4s;
+}
+.navbar-inverse .navbar-nav>.open>a>span{
+	transform: rotate(180deg);
+	transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 /*下拉框*/
 .dropdown-menu{
@@ -198,19 +216,22 @@ a:visited{
 	max-width: 1170px;
 	position: relative;
 	transition: bottom 0.02s;
-	z-index: 8;
+	z-index: 60;
 	animation: topins 1s;
 }
 .p1_l{
 	padding-top: 70px;
-	z-index: 5;
 }
 .p1_text1{
 	margin: 30px 0;
 	font-weight: 300;
 	font-size: 52px;
 }
-.p1_text1>span{
+.p1_text1>div{
+	display: inline-block;
+	position: relative;
+}
+.p1_text1>div>span{
 	font-weight: 600;
 	position: relative;
 	display: none;
@@ -302,7 +323,7 @@ a:visited{
 .part2{
 	background-color: #FFF;
 	position: relative;
-	z-index: 9;
+	z-index: 60;
 }
 .part2>div>div{
 	max-width: 1170px;
@@ -504,7 +525,7 @@ a:visited{
 	color: #2cd4d9;
 }
 .part3{
-	z-index: 51;
+	z-index: 60;
 	background: linear-gradient(to top,rgb(42,22,155) 39%,rgb(41,137,216) 78%,rgb(44,212,217) 95%);
 }
 .more:nth-child(1){
@@ -614,6 +635,7 @@ a:visited{
 	width:100%;
 	height:100%;
 	border:0;
+	z-index: 50;
 	animation: easein 0.5s;
 }
 @keyframes easein{
@@ -743,6 +765,9 @@ a:visited{
 	}
 	.ontop .navbar-toggle.pull-left>span{
 		background-color: #0a8aff;
+	}
+	.navbar-inverse .navbar-nav>.active::after{
+		content: none;
 	}
 	/*==导航栏==*/
 	.part1{

@@ -19,6 +19,25 @@ $(document).ready(function(){
 	function(){
 		$(this).removeClass("open")
 		$('.dropdown>.dropdown-menu>li').css('display','none')
+		clearInterval(rightin);
+	})
+
+	//导航栏顶部蓝条
+	$(".navbar-inverse .navbar-nav.navbar-left>li").hover(function(){
+		var n_active=$(".navbar-inverse .navbar-nav.navbar-left>li").index($(".navbar-inverse .navbar-nav.navbar-left>.active"));
+		var n_hover=$(".navbar-inverse .navbar-nav.navbar-left>li").index(this);
+		var wid=$(this).width();
+		var t,x;
+		$("style").remove();
+		if(n_hover-n_active>=0)
+			for(t=n_active,x=0;t<n_hover;t++)
+				x+=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
+		else
+			for(t=n_active-1,x=0;t>n_hover-1;t--)
+				x-=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
+		$("<style>.navbar-inverse .navbar-nav.navbar-left>.active::after{width:"+wid+"px;left:"+x+"px;}</style>").appendTo("html")
+	},function(){
+		$("style").remove();
 	})
 
 	//导航栏自动隐藏及变色
@@ -82,16 +101,17 @@ $(document).ready(function(){
 	function changespan() {
 		n>2?n=-1:n=n;
 		n+1>2?nn=-1:nn=n;
-		spanhidden(".p1_text1>span:eq("+n+")",0.5);
+		spanhidden(".p1_text1>div>span:eq("+n+")",0.5);
 		if($(window).width()<=991){
-			setTimeout(function(){$(".p1_text1>span:eq("+nn+")").addClass("show")},500);
+			setTimeout(function(){$(".p1_text1>div>span:eq("+nn+")").addClass("show")},500);
 		}
 		else{
-			setTimeout(function(){$(".p1_text1>span:eq("+nn+")").addClass("show")},510);
+			setTimeout(function(){$(".p1_text1>div>span:eq("+nn+")").addClass("show")},510);
 		}
 		n++;
 		nn++;
 	}
+	$(".p1_text1>div").width($(".p1_text1>div>span:eq(0)").width()).height($(".p1_text1>div>span:eq(0)").height())
 	setInterval(changespan,4000)//这里调整切换时隔
 
 
@@ -132,6 +152,7 @@ $(document).ready(function(){
 	    document.addEventListener('DOMMouseScroll',scrollFunc,false);
 	}//W3C
 	window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome
+
 
 	//鼠标移动事件
 	/*$("body").on("mousemove",function(e){
@@ -179,7 +200,7 @@ $(document).ready(function(){
             	}
             	else{
             		$("<iframe id='egg' src='../jq_effects_library/jquery-cloud/index.html'></iframe").appendTo("html")
-	                $(".part2").css({'box-shadow':'0 -50px 50px 100px #fff'})
+	                $(".part2").css({'box-shadow':'0 40px 50px 100px #fff'})
 	                $(".wave").css('display','none')
             	}
                 sum = 0;
