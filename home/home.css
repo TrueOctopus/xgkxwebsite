@@ -230,10 +230,11 @@ a:visited{
 .p1_text1>div{
 	display: inline-block;
 	position: relative;
+	top: 15px;
 }
 .p1_text1>div>span{
 	font-weight: 600;
-	position: relative;
+	position: absolute;
 	display: none;
 }
 .show{
@@ -762,6 +763,10 @@ a:visited{
 	}
 	.navbar.ontop{
 		background-color: #FFF;
+	}
+	.p1_text1>div{
+		top: 10px;
+		left: -40px;
 	}
 	.ontop .navbar-toggle.pull-left>span{
 		background-color: #0a8aff;
