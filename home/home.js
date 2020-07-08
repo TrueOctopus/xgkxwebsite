@@ -42,7 +42,8 @@ $(document).ready(function(){
 
 	//导航栏自动隐藏及变色
 	var t1=0,t2=0,t3;
-	$(window).width()>991?t3=500:t3=50;
+	var win_wid=$(window).width();
+	win_wid>991?t3=500:t3=50;
 	$(window).on('scroll',function(){
 		if($(window).scrollTop() > t3){
 			if (t1<0 || t2<0) {
@@ -52,21 +53,18 @@ $(document).ready(function(){
 			else{
 				$('.navbar').removeClass('navhidden').removeClass('ontop')
 				$('.navbar-header>a>img:eq(1)').fadeOut(200)//左端图片
-				$('.scrolltop').addClass('in')
+				$('.scrolltop').addClass('in')//回到顶部
 			}
 		}
 		else {
 			$('.navbar').removeClass('navhidden').addClass('ontop')
 			$('.scrolltop').removeClass('in')
-			if(t3==500){
+			if(win_wid>991){
 				$('.navbar-header>a>img:eq(1)').fadeIn(200)
-			}//仅限宽屏
-			else{
-				
-			}//仅限窄屏
+			}
 		}
 		//part1底部隐藏
-		if(t3==500){
+		if(win_wid>991){
 			if($(window).scrollTop() > 1000){
 				$(".part1,#egg").css('opacity','0')
 			}
@@ -74,19 +72,11 @@ $(document).ready(function(){
 				$(".part1,#egg").css('opacity','1')
 			}
 		}
-		/*p1top=$('.part1>div>.row').offset().top-$(window).scrollTop();
-		$('.part1>div>.row').css('bottom',p1top/2-70)*/
 	})
 
 	//part1高度填充
 	if(t3==500)
 		$(".part2").css('margin-top',$(".part1").height()+$(".part1>div>div").height()-110)
-	$(window).resize(function(){
-		if(t3==500)
-			$(".part2").css('margin-top',$(".part1").height()+$(".part1>div>div").height()-110)
-	})
-	
-
 	
 	//文字滚动
 	var n=4,nn=4;
@@ -111,7 +101,7 @@ $(document).ready(function(){
 		n++;
 		nn++;
 	}
-	$(".p1_text1>div").width($(".p1_text1>div>span:eq(0)").width()).height($(".p1_text1>div>span:eq(0)").height())
+	$(".p1_text1>div").width($(".p1_text1>div>span:eq(0)").width())
 	setInterval(changespan,4000)//这里调整切换时隔
 
 
@@ -123,12 +113,6 @@ $(document).ready(function(){
 
 	
 	//滚动出现动画
-	scrollappear('.p2_2>div:eq(0)','rightin_s');
-	scrollappear('.p2_2>div:eq(1)','leftin_s');
-	scrollappear('.p2_r','leftin_s');
-	scrollappear('.p2_2_text2,.p2_bt2','topin_s');
-	scrollappear('.p2_4>.row>div','leftin_s');
-	scrollappear('footer,.part3>.more:eq(0)','bottomin_s');
 	function scrollappear(id,effectclass){
 		$(id).css('opacity','0')
 		$(window).on('scroll',function(){
@@ -138,6 +122,13 @@ $(document).ready(function(){
 			}
 		})
 	}
+	scrollappear('.p2_2>div:eq(0)','rightin_s');
+	scrollappear('.p2_l>div>img','scalein_s');
+	scrollappear('.p2_2>div:eq(1)','leftin_s');
+	scrollappear('.p2_r','leftin_s');
+	scrollappear('.p2_2_text2,.p2_bt2','topin_s');
+	scrollappear('.p2_4>.row>div','leftin_s');
+	scrollappear('footer,.part3>.more:eq(0)','bottomin_s');
 
 	//滚轮动作获取
 	var scrollFunc=function(e){
@@ -212,4 +203,17 @@ $(document).ready(function(){
 
         }
 			
+	//窗口改变
+	$(window).resize(function(){
+		win_wid=$(window).width();
+		if(win_wid>973){
+			t3=500;
+			$(".part2").css('margin-top',$(".part1").height()+$(".part1>div>div").height()-110)
+		}
+		else{
+			t3=50;
+			$(".part2").css('margin-top',0)
+			$('.navbar-header>a>img:eq(1)').css('display','none')
+		}
+	})
 })

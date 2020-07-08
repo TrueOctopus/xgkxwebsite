@@ -108,7 +108,7 @@
 	}
 }
 /*导航栏按钮*/
-.navbar-right>button{
+.navbar-right>a>button{
 	margin-top: 3px;
 	margin-left: 15px;
 	color: #FFFFFF;
@@ -118,15 +118,16 @@
 	background-position: 50% 0;
 	font-weight: 600;
 	box-shadow: 0 0 9px -2px rgba(50,29,154,.2);
-	transition: background 0.3s,box-shadow 0.3s,color 0.3s;
+	transition: all 0.3s;
 }
-.navbar-right>button:hover{
+.navbar-right>a>button:hover{
 	color: #FFF;
 	background-position: 90% 0 !important;
 	transition: background-position 0.5s;
 }
-.navbar-right>button:focus{
-	color: #FFFFFF !important;
+.navbar-right>a>button:focus,
+.navbar-right>a>button:active{
+	color: #FFF !important;
 	background-color: #008ded !important;
 	border-color: transparent !important;
 }
@@ -174,14 +175,18 @@
 }
 .navbar-inverse.ontop .navbar-nav>li>a:hover,
 .navbar-inverse.ontop .navbar-nav>.open>a:hover,
-.navbar-inverse.ontop .navbar-nav>.active>a:hover{
+.navbar-inverse.ontop .navbar-nav>.active>a:hover,
+.navbar-inverse.ontop .navbar-nav>li>a:active,
+.navbar-inverse.ontop .navbar-nav>.open>a:active,
+.navbar-inverse.ontop .navbar-nav>.active>a:active{
 	color: #2cd4d9;
 }
-.navbar-inverse.ontop .navbar-right>button{
+.navbar-inverse.ontop .navbar-right>a>button{
 	box-shadow: none;
 	background-position: 0%;
 }
-.navbar-inverse.ontop .navbar-right>button:hover{
+.navbar-inverse.ontop .navbar-right>a>button:hover,
+.navbar-inverse.ontop .navbar-right>a>button:active{
 	background-color: transparent;
 	background-position: 50% !important;
 }
@@ -195,10 +200,8 @@
 *{
 	font-family: microsoft yahei;
 }
-a:hover{
-	color: inherit;
-	text-decoration: inherit;
-}
+a:hover,
+a:active,
 a:visited{
 	color: inherit;
 	text-decoration: inherit;
@@ -230,7 +233,7 @@ a:visited{
 .p1_text1>div{
 	display: inline-block;
 	position: relative;
-	top: 15px;
+	top: -56px;
 }
 .p1_text1>div>span{
 	font-weight: 600;
@@ -553,13 +556,6 @@ a:visited{
 	background-image: linear-gradient(to right,rgb(42,22,155) 10%,rgb(41,137,216) 50%,rgb(44,212,217) 95%);
 	border:0;
 }
-/*.part3>.more:nth-child(3){
-	padding-bottom: 0;
-	transition: 3s;
-}
-.part3>.more:nth-child(3).bottomin_s{
-	padding-bottom: 90px;
-}*/
 .b_top{
 	padding-bottom: 10px;
 	border-bottom: 1px solid rgba(44,212,217,.2);
@@ -643,8 +639,15 @@ a:visited{
 	from{opacity: 0;}
 }
 @keyframes small{
-	from{transform: scale(0.97);}
+	from{transform: scale(.97);}
 }
+@keyframes scaleins{
+	0%{transform: scale(.8);}
+	50%{transform: scale(1.02);}
+	75%{transform: scale(.99);opacity: 1;}
+	100%{transform: scale(1);opacity: 1;}
+}
+.scalein_s{animation: scaleins 0.9s forwards;}
 @keyframes leftins{
 	from{
 		left: -100px;
@@ -715,7 +718,6 @@ a:visited{
 	}
 	.navbar{
 		min-height: 50px;
-		overflow-x: hidden;
 	}
 	.navbar-header>a>img{
 		position: relative;
@@ -727,6 +729,7 @@ a:visited{
 		max-height: 45px;
 	}
 	.navbar-inverse.ontop .navbar-nav>li>a,
+	.navbar-inverse.ontop .navbar-nav>.open>a,
 	.navbar-inverse.ontop .navbar-nav>.active>a{
 		color: #0a8aff;
 	}
@@ -758,7 +761,14 @@ a:visited{
 	.dropdown-menu>li>a{
 		color: #2cd4d9 !important;
 	}
-	.navbar-right>button{
+	.dropdown-menu>li>a:hover,
+	.dropdown-menu>li>a:active{
+		color: #080245 !important;
+	}
+	.navbar-right>button,
+	.navbar-inverse.ontop .navbar-right>a>button,
+	.navbar-inverse.ontop .navbar-right>a>button:hover,
+	.navbar-inverse.ontop .navbar-right>a>button:active{
 		background-position: 50% !important;
 	}
 	.navbar.ontop{
@@ -791,6 +801,9 @@ a:visited{
 	}
 	.p1_text1{
 		font-size: 30px;
+	}
+	.p1_text1>div{
+		top: -33px;
 	}
 	.debug{
 		opacity: 0;
