@@ -1,6 +1,6 @@
 /*导航栏整体*/
 .navbar{
-	transition: top 0.3s,opacity 0.3s,background 0.3s;
+	transition: all 0.3s;
 	min-height: 70px;
 	border-color: transparent;
 	background-color: #FFF;
@@ -45,7 +45,7 @@
 	color: #321D9A;
 }
 /*.active标签上方蓝条*/
-.navbar-inverse .navbar-nav>.active::after{
+.navbar-inverse .navbar-nav>span{
 	content: "";
 	width: 100%;
 	position: absolute;
@@ -278,7 +278,8 @@
 	.ontop .navbar-toggle.pull-left>span{
 		background-color: #0a8aff;
 	}
-	.navbar-inverse .navbar-nav>.active::after{
+	.navbar-inverse .navbar-nav>span{
 		content: none;
 	}
+}
 	/*==导航栏==*/
