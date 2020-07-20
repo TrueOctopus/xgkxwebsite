@@ -23,21 +23,34 @@ $(document).ready(function(){
 	})
 
 	//导航栏顶部蓝条
-	$(".navbar-inverse .navbar-nav.navbar-left>li").hover(function(){
-		var n_active=$(".navbar-inverse .navbar-nav.navbar-left>li").index($(".navbar-inverse .navbar-nav.navbar-left>.active"));
-		var n_hover=$(".navbar-inverse .navbar-nav.navbar-left>li").index(this);
+	var blue_bar=$(".navbar-inverse .navbar-nav.navbar-left>span");
+	var left_active=$(".navbar-inverse .navbar-nav.navbar-left>.active").offset().left;
+	var wid_act=$(".navbar-inverse .navbar-nav.navbar-left>.active").width();
+	var nav_li=$(".navbar-inverse .navbar-nav.navbar-left>li");
+	blue_bar.css({
+		width:wid_act,
+		left:0+left_active
+	})
+	nav_li.hover(function(){
+		var n_active=nav_li.index($(".navbar-inverse .navbar-nav.navbar-left>.active"));
+		var n_hover=nav_li.index(this);
 		var wid=$(this).width();
 		var t,x;
-		$("style").remove();
 		if(n_hover-n_active>=0)
 			for(t=n_active,x=0;t<n_hover;t++)
 				x+=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
 		else
 			for(t=n_active-1,x=0;t>n_hover-1;t--)
 				x-=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
-		$("<style>.navbar-inverse .navbar-nav.navbar-left>.active::after{width:"+wid+"px;left:"+x+"px;}</style>").appendTo("html")
+		blue_bar.css({
+			width:wid,
+			left:x+left_active
+		})
 	},function(){
-		$("style").remove();
+		blue_bar.css({
+			width:wid_act,
+			left:0+left_active
+		})
 	})
 
 	//导航栏自动隐藏及变色
