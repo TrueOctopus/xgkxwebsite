@@ -47,10 +47,8 @@
 /*.active标签上方蓝条*/
 .navbar-inverse .navbar-nav>span{
 	content: "";
-	width: 100%;
 	position: absolute;
-	top: -10px;
-	left: 0;
+	top: 0;
 	transition: all 0.3s;
 	border-top: 3px solid #008ded;
 }

@@ -24,33 +24,22 @@ $(document).ready(function(){
 
 	//导航栏顶部蓝条
 	var blue_bar=$(".navbar-inverse .navbar-nav.navbar-left>span");
-	var left_active=$(".navbar-inverse .navbar-nav.navbar-left>.active").offset().left;
+	var act=$(".navbar-inverse .navbar-nav.navbar-left>.active");
 	var wid_act=$(".navbar-inverse .navbar-nav.navbar-left>.active").width();
-	var nav_li=$(".navbar-inverse .navbar-nav.navbar-left>li");
+	var left_act=$(".navbar-inverse .navbar-nav.navbar-left>.active").offset().left;
 	blue_bar.css({
-		width:wid_act,
-		left:0+left_active
+		width:act.width(),
+		left:0+act.offset().left
 	})
-	nav_li.hover(function(){
-		console.log("navbar.js")
-		var n_active=nav_li.index($(".navbar-inverse .navbar-nav.navbar-left>.active"));
-		var n_hover=nav_li.index(this);
-		var wid=$(this).width();
-		var t,x;
-		if(n_hover-n_active>=0)
-			for(t=n_active,x=0;t<n_hover;t++)
-				x+=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
-		else
-			for(t=n_active-1,x=0;t>n_hover-1;t--)
-				x-=$(".navbar-inverse .navbar-nav.navbar-left>li:eq("+t+")").width();
+	$(".navbar-inverse .navbar-nav.navbar-left>li").hover(function(){
 		blue_bar.css({
-			width:wid,
-			left:x+left_active
+			width:$(this).width(),
+			left:$(this).offset().left,
 		})
 	},function(){
 		blue_bar.css({
 			width:wid_act,
-			left:0+left_active
+			left:left_act,
 		})
 	})
 
